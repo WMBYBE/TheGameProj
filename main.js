@@ -23,7 +23,7 @@ function hireCrab(){
    var nextCost = Math.floor(10 * Math.pow(1.1,crabs));
    document.getElementById('crabCost').innerHTML = nextCost;
    
-   document.getElementById('game-container').style.display = 'block';
+   document.getElementById('game-container').style.display = "block";
 };
 function hireLobster(){
     var lobsterCost = Math.floor(100* Math.pow(1.1,lobsters));
