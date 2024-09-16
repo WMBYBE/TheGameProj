@@ -21,24 +21,19 @@
             const startButton = document.getElementById('Crab_Game');
             const pCanvas = document.getElementById('pCanvas');
 
-            pyxel.init({
-                canvas: pCanvas,
-                width: 160,
-                height: 120,
-                title: "Catch Crab"
-            });
+          
 
             async function LoadGameScript() {
-                const response = await fetch(main.py);
+                const response = await fetch('main.py');
                 return await response.text();
                 
             }
 
-            startButton.addEventListener('Click', async function(){
+            startButton.addEventListener('click', async function(){
                 pCanvas.style.display= 'block';
 
                 const gameScript = await LoadGameScript();
-                pyxel.run(gameScript);
+                gameScript;
             });
 
         });
