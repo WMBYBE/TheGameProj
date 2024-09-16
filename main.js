@@ -12,7 +12,7 @@ function addShrimp(number){
     document.getElementById("shrimpCount").innerHTML = shrimp;
 };
 // Purchases
-function hireCrab(){
+async function hireCrab(){
    var crabCost = Math.floor(10* Math.pow(1.1,crabs));
    if(shrimp>= crabCost){
         crabs = crabs + 1;
@@ -23,8 +23,7 @@ function hireCrab(){
    var nextCost = Math.floor(10 * Math.pow(1.1,crabs));
    document.getElementById('crabCost').innerHTML = nextCost;
 
-   document.getElementById('pyxelCanvas').style.display = 'block'; };
-async function hireCrab() {
+   document.getElementById('pyxelCanvas').style.display = 'block'; 
     const pCanvas = document.getElementById('pyxelCanvas');
     pyxel.init({
         canvas: pCanvas,
