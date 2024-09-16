@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <Header>
+        <link rel="stylesheet" type="css" href="style.css" />
+    </Header>
+    <body>
+        <div id="shrimp-container">
+            <p>You have <span id="shrimpCount">0</span> shirimp</p>
+            <button onclick="addShrimp(1)">Catch Shrimp</button>
+            <button id="Crab_Game" onclick="hireCrab()">Hire Crabs (Cost: <span id="crabCost">10</span>) </button>
+            <button onclick="hireLobster()">Hire Lobsters (Cost: <span id="lobsterCost">100</span>) </button>
+            <button onclick="hireMan()">Hire Shrimpermen (Cost: <span id="manCost">1000</span>)</button>
+            <button onclick="hireBoat()">Hire Boats (Cost: <span id="boatCost">10000</span>) </button>
+            <button onclick="hireShramp()">Hire a Shramp? (Cost: <span id="shrampCost">10000</span>) </button>
+            <p id="Flavor">You telling me a shrimp boat this caught?</p>
+        </div>
+        <div id="owned">
+            <p> you Have <span id="crabs">0</span> Crabs catching shrimp</p>
+            <p> You have <span id="lobsters">0</span> lobsters catching shrimp</p>
+            <p> You have <span id="man">0</span> men catching shrimp</p>
+            <p> You have <span id="boats">0</span> boats catching shrimp</p>
+            <p> You have <span id="shramp">0</span> shramp catching shrimp</p>
+        </div>
+        <div id="saves">
+            <button onclick="savegame()">save</button> 
+            <button onclick="load()">load</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/gh/kitao/pyxel/wasm/pyxel.js"></script>
+        <div id="pyxelCanvas"></div>
+        <pyxel-run id="script" name="main.py" width="160" height="120" style="display:none;"></pyxel-run>
+        <script>
+            document.getElementById("Crab_Game").addEventListener("click", function(){
+                document.getElementById("pyxelScript").style.display = "block";
+            })
+        </script>
+        <script src="main.js"></script>
+    </body>

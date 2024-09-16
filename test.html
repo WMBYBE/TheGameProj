@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/kitao/pyxel/wasm/pyxel.js"></script>
+</head>
+<body>
+    <button id ="Crab_Game">Start</button>
+
+    <pyxel-run id="pScript" name="main.py" ></pyxel-run>
+
+    <script>
+        window.addEventListener('load', function(){
+            const start_Crab = document.getElementById('Crab_Game');
+            const pScript = document.getElementById('pScript');
+
+            start_Crab.addEventListener('click', function(){
+                pScript.style.display = 'block';
+                pScript.run();
+            });
+        });
+
+    </script>
+
+</body>
+</html>
