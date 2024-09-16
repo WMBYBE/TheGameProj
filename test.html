@@ -14,20 +14,34 @@
 </head>
 <body>
     <button id ="Crab_Game">Start</button>
-
-    <pyxel-run id="pScript" name="main.py" ></pyxel-run>
+    <canvas id="pCanvas"></canvas>
 
     <script>
-        window.addEventListener('load', function(){
-            const start_Crab = document.getElementById('Crab_Game');
-            const pScript = document.getElementById('pScript');
+    window.addEventListener('load',function() {
+            const startButton = document.getElementById('Crab_Game');
+            const pCanvas = document.getElementById('pCanvas');
 
-            start_Crab.addEventListener('click', function(){
-                pScript.style.display = 'block';
-                pScript.run();
+            pyxel.init({
+                canvas: pCanvas,
+                width: 160,
+                height: 120,
+                title: "Catch Crab"
             });
-        });
 
+            async function LoadGameScript() {
+                const response = await fetch(main.py);
+                return await response.text();
+                
+            }
+
+            startButton.addEventListener('Click', async function(){
+                pCanvas.style.display= 'block';
+
+                const gameScript = await LoadGameScript();
+                pyxel.run(gameScript);
+            });
+
+        });
     </script>
 
 </body>
