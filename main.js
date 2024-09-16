@@ -12,7 +12,7 @@ function addShrimp(number){
     document.getElementById("shrimpCount").innerHTML = shrimp;
 };
 // Purchases
-async function hireCrab(){
+function hireCrab(){
    var crabCost = Math.floor(10* Math.pow(1.1,crabs));
    if(shrimp>= crabCost){
         crabs = crabs + 1;
@@ -22,23 +22,8 @@ async function hireCrab(){
    };
    var nextCost = Math.floor(10 * Math.pow(1.1,crabs));
    document.getElementById('crabCost').innerHTML = nextCost;
-
-   document.getElementById('pyxelCanvas').style.display = 'block'; 
-    const pCanvas = document.getElementById('pyxelCanvas');
-    pyxel.init({
-        canvas: pCanvas,
-        width: 160,
-        height: 120,
-        title: "Crabs"
-    });
-
-    async function LoadGameScript() {
-    const response = await fetch('main.py');
-    return await response.text();
-    
-};
-const gameScript = LoadGameScript();
-    pyxel.run(gameScript);
+   
+   document.getElementById('game-container').style.display = 'block';
 };
 function hireLobster(){
     var lobsterCost = Math.floor(100* Math.pow(1.1,lobsters));
