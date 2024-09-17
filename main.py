@@ -62,6 +62,7 @@ class App:
         if self.player_y == 10 and self.player_x == 80:
             self.is_alive = False
             self.game_won = True
+            pyxel.js("notifyWin()")
 
     def draw(self):
         pyxel.cls(5)
