@@ -1,7 +1,36 @@
-div {
-    border-style: solid;
-
-}
 body {
     background-color: #1d7fb8;
+    text-align: center;
+    font-size: 20px;
+}
+
+#owned{
+    border-style: Solid;
+    background-color: sandybrown;
+}
+
+#shrimp_btn {
+    background-image: src="shrimp.png"
+}
+button {
+    background-color:#1d7fb8;
+}
+#game-container {
+    margin-left: auto;
+}
+/* building counter numbers */
+#crabs{
+    color:#eb4034
+}
+#lobsters{
+    color:#9c0f05
+}
+#man{
+    color:#b88d56
+}
+#boat{
+    color:#634217
+}
+#shramp{
+    color:#d65eb2
 }

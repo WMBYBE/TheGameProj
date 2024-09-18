@@ -19,11 +19,10 @@ function hireCrab(){
         shrimp = shrimp - crabCost;
         document.getElementById('crabs').innerHTML = crabs;
         document.getElementById('shrimpCount').innerHTML = shrimp;
+        document.getElementById('game-container').style.display = "block";
    };
    var nextCost = Math.floor(10 * Math.pow(1.1,crabs));
    document.getElementById('crabCost').innerHTML = nextCost;
-   
-   document.getElementById('game-container').style.display = "block";
 };
 function hireLobster(){
     var lobsterCost = Math.floor(100* Math.pow(1.1,lobsters));
@@ -69,6 +68,9 @@ function hireLobster(){
     var nextCost = Math.floor(100000 * Math.pow(1.1,shramp));
     document.getElementById('shrampCost').innerHTML = nextCost;
  };
+ function hide(){
+    document.getElementById('game-container').style.display = "none";
+ }
  
  function update(){ 
     document.getElementById("shrimpCount").innerHTML = shrimp;
@@ -125,14 +127,14 @@ function hireLobster(){
 
 // Ticks
 window.setInterval(function(){
-    addShrimp(crabs)
-    addShrimp(lobsters*3)
-    addShrimp(boats*10)
-    addShrimp(man*7)
-    addShrimp(shramp*25)
+    addShrimp(crabs*2)
+    addShrimp(lobsters*6)
+    addShrimp(man*14)
+    addShrimp(boats*20)
+    addShrimp(shramp*50)
     ;
 
 }, 1000);
 window.setInterval(function(){
     savegame();
-}, 60000);
+}, 120000);

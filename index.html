@@ -1,13 +1,14 @@
 <!DOCTYPE html>
     <Header>
-        <link rel="stylesheet" type="css" href="style.css">
-        <script src="https://cdn.jsdelivr.net/gh/kitao/pyxel/wasm/pyxel.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
         <title>Shrimp Clicker</title>
     </Header>
     <body>
         <div id="shrimp-container">
             <p>You have <span id="shrimpCount">0</span> shirimp</p>
-            <button onclick="addShrimp(1)">Catch Shrimp</button>
+            <button onclick="addShrimp(1)"><img src="shrimp.png"></button>
+        </div>
+        <div id="upgrades">
             <button id="Crab_Game" onclick="hireCrab()">Hire Crabs (Cost: <span id="crabCost">10</span>) </button>
             <button onclick="hireLobster()">Hire Lobsters (Cost: <span id="lobsterCost">100</span>) </button>
             <button onclick="hireMan()">Hire Shrimpermen (Cost: <span id="manCost">1000</span>)</button>
@@ -16,7 +17,7 @@
             <p id="Flavor">You telling me a shrimp boat this caught?</p>
         </div>
         <div id="owned">
-            <p> you Have <span id="crabs">0</span> Crabs catching shrimp</p>
+            <p> You Have <span id="crabs">0</span> Crabs catching shrimp</p>
             <p> You have <span id="lobsters">0</span> lobsters catching shrimp</p>
             <p> You have <span id="man">0</span> men catching shrimp</p>
             <p> You have <span id="boats">0</span> boats catching shrimp</p>
@@ -29,13 +30,9 @@
 
         <div id="game-container" style="display: none;">
             <iframe id="pyxel-iframe" src="crab.html" width="800" height="600" fromeborder="0"></iframe>
+            <button onclick="hide()">Hide game</button>
 
         </div>
-        <script>
-            window.notifyWin = function() {
-                document.getElementById('game-container').style.display = "none";
-            }
-        </script>
         <script src='main.js'></script>
 
     </body>
